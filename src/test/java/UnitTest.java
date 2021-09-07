@@ -74,4 +74,14 @@ class UnitTest {
 
         assertEquals(expectedResult5, peaks.pickPeaks(Arrays.asList(3, 2, 3, 6, 4, 1, 2, 3, 2, 1, 2, 3)));
     }
+
+    @Test
+    void decodeString() {
+        DecodeString decodeString = new DecodeString();
+
+        assertEquals("aaabcbc", decodeString.decodeString("3[a]2[bc]"));
+        assertEquals("accaccacc", decodeString.decodeString("3[a2[c]]"));
+        assertEquals("abcabccdcdcdef", decodeString.decodeString("2[abc]3[cd]ef"));
+        assertEquals("abccdcdcdxyz", decodeString.decodeString("abc3[cd]xyz"));
+    }
 }
